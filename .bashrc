@@ -42,10 +42,18 @@ do
 done
 
 
-# Create a local bin dir if one does not exist
-if [ ! -d $HOME/bin ]; then
-    mkdir $HOME/bin
-fi
+# Create HOME subdirs if they don't exist
+DIRS="
+bin
+var/log
+tmp
+"
+for DIR in $DIRS
+do
+    if [ ! -d $HOME/$DIR ]; then
+        mkdir -p $HOME/$DIR
+    fi
+done
 
 
 # Prepend to $PATH
