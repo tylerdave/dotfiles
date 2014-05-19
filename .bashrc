@@ -30,8 +30,9 @@ repeat(){
 # Source additional settings files
 SOURCE_FILES="
 /etc/bashrc
-$HOME/.bashrc-local
 /usr/bin/virtualenvwrapper.sh
+$HOME/.bashrc-local
+$HOME/.ghar/ghar-bash-completion.sh
 "
 for SOURCE_FILE in $SOURCE_FILES
 do
@@ -47,6 +48,7 @@ PATH="$HOME/bin:$PATH"
 PATH_DIRS="
 /usr/local/heroku/bin
 $HOME/.local/bin
+$HOME/.ghar/bin
 "
 for DIR in $PATH_DIRS
 do
