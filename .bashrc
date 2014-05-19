@@ -42,10 +42,17 @@ do
 done
 
 
+# Create a local bin dir if one does not exist
+if [ ! -d $HOME/bin ]; then
+    mkdir $HOME/bin
+fi
+
+
 # Prepend to $PATH
 if [[ $PATH != "$HOME/bin:"* ]]; then
     PATH="$HOME/bin:$PATH"
 fi
+
 
 # Append $PATH
 PATH_DIRS="
