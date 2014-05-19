@@ -50,7 +50,7 @@ fi
 
 # Prepend to $PATH
 if [[ $PATH != "$HOME/bin:"* ]]; then
-    PATH="$HOME/bin:$PATH"
+    export PATH="$HOME/bin:$PATH"
 fi
 
 
@@ -64,11 +64,10 @@ for DIR in $PATH_DIRS
 do
     if [ -d $DIR ]; then
         if [[ ":$PATH:" != *":$DIR:"* ]]; then
-            PATH="$PATH:$DIR"
+            export PATH="$PATH:$DIR"
         fi
     fi
 done
-export PATH
 
 
 # Sets the window title when in a screen terminal
