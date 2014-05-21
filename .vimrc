@@ -39,7 +39,7 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if v:version > 702
+if v:version >= 702
 
     " For Vundle
     set nocompatible
