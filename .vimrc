@@ -39,6 +39,8 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if v:version < 703
+
 " For Vundle
 set nocompatible
 filetype off
@@ -59,6 +61,7 @@ Plugin 'davidhalter/jedi-vim'
 call vundle#end()
 filetype plugin indent on
 
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
