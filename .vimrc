@@ -56,7 +56,8 @@ if v:version >= 702
 "    Plugin 'klen/python-mode'
     Plugin 'davidhalter/jedi-vim'
     Plugin 'altercation/vim-colors-solarized'
-    Plugin 'kevinw/pyflakes-vim'
+"    Plugin 'kevinw/pyflakes-vim'
+"    Plugin 'nvie/vim-flake8'
     "Bundle 'Valloric/YouCompleteMe'
     
     call vundle#end()
