@@ -47,6 +47,7 @@ DIRS="
 bin
 var/log
 tmp
+.vim
 "
 for DIR in $DIRS
 do
