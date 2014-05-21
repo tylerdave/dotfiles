@@ -51,15 +51,29 @@ if v:version >= 702
     "Plugin 'gmarik/Vundle.vim'
     
     Plugin 'scrooloose/nerdtree'
-    "Plugin 'scrooloose/syntastic'
+"    Plugin 'scrooloose/syntastic'
     Plugin 'kien/ctrlp.vim'
-"    Plugin 'klen/python-mode'
+"    Bundle 'klen/python-mode'
     Plugin 'davidhalter/jedi-vim'
     Plugin 'altercation/vim-colors-solarized'
-"    Plugin 'kevinw/pyflakes-vim'
-"    Plugin 'nvie/vim-flake8'
+    Plugin 'nvie/vim-flake8'
     "Bundle 'Valloric/YouCompleteMe'
-    
+ "   Plugin 'ervandew/supertab'
+   Plugin 'kevinw/pyflakes-vim'
+
+    " Snippets:
+    Plugin 'msanders/snipmate.vim'
+
+    " General Programming:
+    Plugin 'vim-scripts/taglist.vim'
+    Plugin 'vim-scripts/TaskList.vim'
+
+    " File History:
+    Plugin 'sjl/gundo.vim'
+
+    " Tests:
+    Plugin 'reinh/vim-makegreen'
+
     call vundle#end()
     filetype plugin indent on
 
@@ -70,8 +84,15 @@ if v:version >= 702
         colorscheme desert
     endtry
 
+    try
+        set colorcolumn=80
+    catch
+    endtry
     
 endif
+
+set showcmd
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -293,7 +314,7 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l:%c
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -445,5 +466,6 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+highlight OverLength ctermbg=16 ctermfg=1
+match OverLength /\%80v.\+/
+highlight pyflakes ctermbg=1 ctermfg=0
