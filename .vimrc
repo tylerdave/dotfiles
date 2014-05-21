@@ -39,28 +39,37 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if v:version < 703
+if v:version > 702
 
-" For Vundle
-set nocompatible
-filetype off
+    " For Vundle
+    set nocompatible
+    filetype off
+    
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    
+    "Plugin 'gmarik/Vundle.vim'
+    
+    Plugin 'scrooloose/nerdtree'
+    "Plugin 'scrooloose/syntastic'
+    Plugin 'kien/ctrlp.vim'
+"    Plugin 'klen/python-mode'
+    Plugin 'davidhalter/jedi-vim'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'kevinw/pyflakes-vim'
+    "Bundle 'Valloric/YouCompleteMe'
+    
+    call vundle#end()
+    filetype plugin indent on
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-"Plugin 'gmarik/Vundle.vim'
+    try
+        colorscheme solarized
+    catch
+        colorscheme desert
+    endtry
 
-Plugin 'scrooloose/nerdtree'
-"Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
-Plugin 'davidhalter/jedi-vim'
-
-"Bundle 'Valloric/YouCompleteMe'
-
-call vundle#end()
-filetype plugin indent on
-
+    
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,10 +167,10 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable 
 
-try
-    colorscheme desert
-catch
-endtry
+"try
+"    colorscheme desert
+"catch
+"endtry
 
 set background=dark
 

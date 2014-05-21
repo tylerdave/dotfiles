@@ -96,3 +96,8 @@ if [ -n "$SSH_AUTH_SOCK" ] && [ -e "$SSH_AUTH_SOCK" ]  && [ "$SSH_AUTH_SOCK" != 
     ln -sf "$SSH_AUTH_SOCK" $HOME/.ssh/ssh_auth_sock_link
 fi
 
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi
