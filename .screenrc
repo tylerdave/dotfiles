@@ -5,7 +5,7 @@ startup_message off
 #hardstatus alwayslastline
 #hardstatus string '%{= kg}[%{G}%H%{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n-%t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{g}[%{B}%d.%m.%Y %{G}%C%A%{g}]'
 #hardstatus alwayslastline "%{=}%-w%{+b w}%n %t%{-b w}%+w %=%c"
-hardstatus alwayslastline "%{rk}%` %{gk}%c %{yk}%M%d %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
+hardstatus alwayslastline "%{rk}%` %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
 
 
 #hardstatus alwayslastline string '%H:%`'
