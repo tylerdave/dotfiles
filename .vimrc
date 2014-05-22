@@ -77,7 +77,6 @@ if v:version >= 702
     call vundle#end()
     filetype plugin indent on
 
-
     try
         colorscheme solarized
     catch
@@ -92,7 +91,7 @@ if v:version >= 702
 endif
 
 set showcmd
-
+set nu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -314,7 +313,7 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l:%c
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \[%l:%c\]
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -466,6 +465,6 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-highlight OverLength ctermbg=16 ctermfg=1
+highlight OverLength ctermbg=8 ctermfg=1
 match OverLength /\%80v.\+/
 highlight pyflakes ctermbg=1 ctermfg=0
