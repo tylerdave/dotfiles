@@ -1,4 +1,6 @@
 dotfiles
 ========
 
-My collection of dotfiles / rcfiles
+My collection of dotfiles, managed with [ghar].
+
+[ghar]:https://github.com/philips/ghar
