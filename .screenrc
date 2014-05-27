@@ -11,11 +11,15 @@ hardstatus alwayslastline "%{rk}%` %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw
 #hardstatus alwayslastline string '%H:%`'
 backtick 0 30 30 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
 
+term screen-256color
 termcapinfo xterm|xterms|xs|rxvt ti@:te@
-
 termcap xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 terminfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 
+# just testing -- not needed at the moment
+#attrcolor b ".I"    # allow bold colors - necessary for some reason
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
+#defbce on    # use current bg color for erased chars
 
 altscreen on
 shelltitle '$ |bash'
