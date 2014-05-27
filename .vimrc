@@ -51,7 +51,7 @@ if v:version >= 702
     "Plugin 'gmarik/Vundle.vim'
     
     Plugin 'scrooloose/nerdtree'
-"    Plugin 'scrooloose/syntastic'
+    Plugin 'scrooloose/syntastic'
     Plugin 'kien/ctrlp.vim'
 "    Bundle 'klen/python-mode'
     Plugin 'davidhalter/jedi-vim'
