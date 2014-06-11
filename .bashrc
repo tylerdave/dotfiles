@@ -52,21 +52,6 @@ do
 done
 
 
-# Create HOME subdirs if they don't exist
-DIRS="
-bin
-var/log
-tmp
-.vim/bundle
-"
-for DIR in $DIRS
-do
-    if [ ! -d $HOME/$DIR ]; then
-        mkdir -p $HOME/$DIR
-    fi
-done
-
-
 # Prepend to $PATH
 if [[ $PATH != "$HOME/bin:"* ]]; then
     export PATH="$HOME/bin:$PATH"
