@@ -51,6 +51,7 @@ if v:version >= 702
     "Plugin 'gmarik/Vundle.vim'
     
     Plugin 'scrooloose/nerdtree'
+    map <C-n> :NERDTreeToggle<CR>
     Plugin 'scrooloose/syntastic'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'kien/ctrlp.vim'
