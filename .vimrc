@@ -75,6 +75,7 @@ if v:version >= 702
 
     " Tests:
     Plugin 'reinh/vim-makegreen'
+    Plugin 'bling/vim-airline'
 
     call vundle#end()
     filetype plugin indent on
