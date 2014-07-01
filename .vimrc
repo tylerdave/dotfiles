@@ -44,12 +44,10 @@ if v:version >= 702
     " For Vundle
     set nocompatible
     filetype off
-    
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
-    
     "Plugin 'gmarik/Vundle.vim'
-    
+
     Plugin 'scrooloose/nerdtree'
     map <C-n> :NERDTreeToggle<CR>
     Plugin 'scrooloose/syntastic'
@@ -76,10 +74,14 @@ if v:version >= 702
 
     " Tests:
     Plugin 'reinh/vim-makegreen'
-    Plugin 'Lokaltog/powerline'
-"    Plugin 'bling/vim-airline'
-"    let g:airline_powerline_fonts = 1
-    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+    " Airline:
+    Plugin 'bling/vim-airline'
+    let g:airline_powerline_fonts = 1
+
+    " Powerline:
+"    Plugin 'Lokaltog/powerline'
+"    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
     call vundle#end()
     filetype plugin indent on
@@ -94,7 +96,10 @@ if v:version >= 702
         set colorcolumn=80
     catch
     endtry
-    
+
+    set list
+    set listchars=trail:·,extends:→,precedes:←,nbsp:⇥,tab:↹↹
+
 endif
 
 set showcmd
@@ -121,7 +126,7 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" :W sudo saves the file 
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
@@ -159,23 +164,23 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -193,7 +198,7 @@ set foldcolumn=1
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 "try
 "    colorscheme desert
