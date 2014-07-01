@@ -55,12 +55,13 @@ if v:version >= 702
     Plugin 'scrooloose/syntastic'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'kien/ctrlp.vim'
+    Plugin 'tpope/vim-fugitive'
 "    Bundle 'klen/python-mode'
     Plugin 'davidhalter/jedi-vim'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'nvie/vim-flake8'
     "Bundle 'Valloric/YouCompleteMe'
- "   Plugin 'ervandew/supertab'
+"   Plugin 'ervandew/supertab'
    Plugin 'kevinw/pyflakes-vim'
 
     " Snippets:
