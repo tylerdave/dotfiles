@@ -77,6 +77,7 @@ if v:version >= 702
     " Tests:
     Plugin 'reinh/vim-makegreen'
     Plugin 'bling/vim-airline'
+    let g:airline_powerline_fonts = 1
 
     call vundle#end()
     filetype plugin indent on
