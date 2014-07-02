@@ -1,12 +1,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
+" Maintainer:
 "       Amir Salihefendic
 "       http://amix.dk - amix@amix.dk
 "
-" Version: 
+" Version:
 "       5.0 - 29/05/12 15:43:36
 "
-" Blog_post: 
+" Blog_post:
 "       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
 "
 " Awesome_version:
@@ -19,7 +19,7 @@
 " Syntax_highlighted:
 "       http://amix.dk/vim/vimrc.html
 "
-" Raw_version: 
+" Raw_version:
 "       http://amix.dk/vim/vimrc.txt
 "
 " Sections:
@@ -52,7 +52,7 @@ if v:version >= 702
     map <C-n> :NERDTreeToggle<CR>
     Plugin 'scrooloose/syntastic'
     Plugin 'scrooloose/nerdcommenter'
-    Plugin 'kien/ctrlp.vim'
+"    Plugin 'kien/ctrlp.vim'
     Plugin 'tpope/vim-fugitive'
 "    Bundle 'klen/python-mode'
     Plugin 'davidhalter/jedi-vim'
@@ -63,11 +63,11 @@ if v:version >= 702
    Plugin 'kevinw/pyflakes-vim'
 
     " Snippets:
-    Plugin 'msanders/snipmate.vim'
+"    Plugin 'msanders/snipmate.vim'
 
     " General Programming:
-    Plugin 'vim-scripts/taglist.vim'
-    Plugin 'vim-scripts/TaskList.vim'
+"    Plugin 'vim-scripts/taglist.vim'
+"    Plugin 'vim-scripts/TaskList.vim'
 
     " File History:
     Plugin 'sjl/gundo.vim'
@@ -147,6 +147,8 @@ if has("win16") || has("win32")
 else
     set wildignore+=.git\*,.hg\*,.svn\*
 endif
+
+set wildmode=longest,list,full
 
 "Always show current position
 set ruler
@@ -292,8 +294,8 @@ map <leader>ba :1,1000 bd!<cr>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -302,7 +304,7 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
@@ -365,7 +367,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
 " Open Ack and put the cursor in the right position
-map <leader>g :Ack 
+map <leader>g :Ack
 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
@@ -424,7 +426,7 @@ function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
     unmenu Foo
-endfunction 
+endfunction
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
