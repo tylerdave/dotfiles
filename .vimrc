@@ -78,7 +78,7 @@ if v:version >= 702
     " Airline:
     Plugin 'bling/vim-airline'
     let g:airline_powerline_fonts = 1
-
+    let g:airline_theme = 'powerlineish'
     " Powerline:
 "    Plugin 'Lokaltog/powerline'
 "    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
