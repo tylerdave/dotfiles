@@ -1,0 +1,13 @@
+#!/bin/bash
+# This hook is run after every virtualenv is activated.
+
+VENV_DIR=$CHECKOUTS_DIR/$(basename $VIRTUAL_ENV)
+
+if [ -d $VENV_DIR ]; then
+    echo "Changing dir: $VENV_DIR"
+    cd $VENV_DIR
+else
+    echo "No such dir: $VENV_DIR"
+fi
+
+pwd
