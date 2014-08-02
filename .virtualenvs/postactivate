@@ -9,5 +9,3 @@ if [ -d $VENV_DIR ]; then
 else
     echo "No such dir: $VENV_DIR"
 fi
-
-pwd
