@@ -26,6 +26,7 @@ fi
 alias svnd='svn --diff-cmd diff -x "-y --suppress-common-lines" diff | less'
 alias grin='grin --force-color'
 alias less='less -R'
+alias ll='ls -al --color=auto'
 # print a nice timestamp
 alias ts='date +"%Y-%m-%d-%H:%M:%S"'
 
