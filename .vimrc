@@ -93,7 +93,7 @@ if v:version >= 702
     endtry
 
     try
-        set colorcolumn=80
+        set colorcolumn=79
     catch
     endtry
 
@@ -128,7 +128,7 @@ nmap <leader>w :w!<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+"command W w !sudo tee % > /dev/null
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
