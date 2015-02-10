@@ -83,13 +83,19 @@ if v:version >= 702
 "    Plugin 'Lokaltog/powerline'
 "    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
+    " Markdown:
+    Plugin 'godlygeek/tabular'
+    Plugin 'plasticboy/vim-markdown'
+    let g:vim_markdown_folding_disabled=1
+
     call vundle#end()
     filetype plugin indent on
+
+    set background=dark
 
     try
         colorscheme solarized
     catch
-        colorscheme desert
     endtry
 
     try
@@ -128,8 +134,9 @@ nmap <leader>w :w!<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
-
+"command W w !sudo tee % > /dev/null
+" ^ that proved more annoying than anything, let's just make it the same as w
+cnoreabbrev W w
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -195,6 +202,7 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+"set nofoldenable
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -202,12 +210,6 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable
 
-"try
-"    colorscheme desert
-"catch
-"endtry
-
-set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")

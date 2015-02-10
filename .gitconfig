@@ -2,7 +2,7 @@
 	name = Dave Forgac
 	email = tylerdave@tylerdave.com
 [core]
-	autocrlf = input
+#	autocrlf = input
 	safecrlf = true
 
 [alias]
