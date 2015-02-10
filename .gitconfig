@@ -10,7 +10,8 @@
     ci = commit
     st = status
     br = branch
-    hist = log --pretty=format:'%h %ad | %s%d [%an <%ae>]' --graph --date=short
+    hist = log --pretty=format:'%h %ad | %s%Cblue%d%Creset [%an <%ae>]' --graph --date=short
+    last = diff HEAD^ HEAD
     type = cat-file -t
     dump = cat-file -p
 [color]

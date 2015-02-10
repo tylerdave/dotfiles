@@ -99,7 +99,7 @@ if v:version >= 702
     endtry
 
     try
-        set colorcolumn=80
+        set colorcolumn=79
     catch
     endtry
 
