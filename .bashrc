@@ -55,6 +55,7 @@ $HOME/.bashrc-local
 $HOME/.ghar/ghar-bash-completion.sh
 $HOME/.git-prompt.sh
 $HOME/.git-completion.bash
+$HOME/.django_bash_completion
 "
 for SOURCE_FILE in $SOURCE_FILES
 do
