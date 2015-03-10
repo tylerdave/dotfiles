@@ -30,6 +30,7 @@ alias ll='ls -al --color=auto'
 # print a nice timestamp
 alias ts='date +"%Y-%m-%d-%H:%M:%S"'
 
+alias cleanpyc='find . -name "*.pyc" -delete'
 
 # Bash functions
 # adds a timestamp
@@ -75,6 +76,7 @@ PATH_DIRS="
 /usr/local/heroku/bin
 $HOME/.local/bin
 $HOME/.ghar/bin
+$HOME/node_modules/.bin
 "
 for DIR in $PATH_DIRS
 do
