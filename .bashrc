@@ -1,7 +1,7 @@
 # Environment variables
 export EDITOR=vim
 #PS1="[\u@\h:\w]\$ "
-PS1=' $?, PWD=\w\n[\u@\h:$(__git_ps1 " <%s>")]\$ '
+PS1='[$? PWD=\w$(__git_ps1 " <%s>")]\n\u@\h:\$ '
 export GIT_PS1_SHOWDIRTYSTATE=True
 export GIT_PS1_SHOWSTASHSTATE=True
 export GIT_PS1_SHOWCOLORHINTS=True
