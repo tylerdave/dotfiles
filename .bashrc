@@ -33,6 +33,8 @@ alias ts='date +"%Y-%m-%d-%H:%M:%S"'
 
 alias cleanpyc='find . -name "*.pyc" -delete'
 
+alias pyohio='workon notes && cd conferences/pyohio'
+
 # Bash functions
 # adds a timestamp
 addts() {
