@@ -31,9 +31,7 @@ alias ll='ls -al --color=auto'
 # print a nice timestamp
 alias ts='date +"%Y-%m-%d-%H:%M:%S"'
 
-alias cleanpyc='find . -name "*.pyc" -delete'
-
-alias pyohio='workon notes && cd conferences/pyohio'
+alias cleanpyc='find . -name "*.pyc" -delete && find . -type d -name "__pycache__" -exec rmdir "{}" \;'
 
 # Bash functions
 # adds a timestamp
@@ -111,4 +109,9 @@ if [ -n "$SSH_AUTH_SOCK" ] && [ -e "$SSH_AUTH_SOCK" ]  && [ "$SSH_AUTH_SOCK" != 
     ln -sf "$SSH_AUTH_SOCK" $HOME/.ssh/ssh_auth_sock_link
 fi
 
-
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
