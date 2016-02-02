@@ -103,11 +103,15 @@ if [[ "$TERM" = "screen"* ]]; then
     fi
 fi
 
-
-# reconnects ssh auth socket upon new login
-if [ -n "$SSH_AUTH_SOCK" ] && [ -e "$SSH_AUTH_SOCK" ]  && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock_link" ]; then
-    ln -sf "$SSH_AUTH_SOCK" $HOME/.ssh/ssh_auth_sock_link
-fi
+link_auth_sock(){
+    # reconnects ssh auth socket upon new login
+    if [ -n "$SSH_AUTH_SOCK" ] && [ -e "$SSH_AUTH_SOCK" ]  && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock_link" ]; then
+        export OLD_SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+        ln -sf "$SSH_AUTH_SOCK" $HOME/.ssh/ssh_auth_sock_link
+        export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock_link
+        echo "linking: $OLD_SSH_AUTH_SOCK -> $SSH_AUTH_SOCK"
+    fi
+}
 
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
@@ -115,3 +119,11 @@ if [ -f `which powerline-daemon` ]; then
   POWERLINE_BASH_SELECT=1
   . /usr/share/powerline/bash/powerline.sh
 fi
+
+link_auth_sock
+
+reauth() {
+    export SSH_AUTH_SOCK=$(find /tmp -maxdepth 2 -type s -name "agent*" -user $USER -printf '%T@ %p\n' 2>/dev/null |sort -n|tail -1|cut -d' ' -f2)
+    echo "found: $SSH_AUTH_SOCK"
+    link_auth_sock
+}
