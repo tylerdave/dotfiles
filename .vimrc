@@ -88,6 +88,9 @@ if v:version >= 702
     Plugin 'plasticboy/vim-markdown'
     let g:vim_markdown_folding_disabled=1
 
+    " Auto paste mode:
+    Plugin 'ConradIrwin/vim-bracketed-paste'
+
     call vundle#end()
     filetype plugin indent on
 
