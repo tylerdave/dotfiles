@@ -61,7 +61,7 @@ if v:version >= 702
     "Bundle 'Valloric/YouCompleteMe'
 "   Plugin 'ervandew/supertab'
    Plugin 'kevinw/pyflakes-vim'
-
+    Plugin 'ConradIrwin/vim-bracketed-paste'
     " Snippets:
 "    Plugin 'msanders/snipmate.vim'
 
