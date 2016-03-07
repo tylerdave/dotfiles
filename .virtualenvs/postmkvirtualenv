@@ -1,7 +1,3 @@
 #!/bin/bash
 # This hook is sourced after a new virtualenv is activated.
 
-if [ -z "$CHECKOUTS_DIR" ]; then
-    VENV_DIR=$CHECKOUTS_DIR/$(basename $VIRTUAL_ENV)
-    mkdir -p $VENV_DIR
-fi

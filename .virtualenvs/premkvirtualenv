@@ -2,3 +2,11 @@
 # This hook is run after a new virtualenv is created and before it is activated.
 # argument: name of new environment
 
+NEW_ENV=$1
+
+if [ -n "$CHECKOUTS_DIR" ]; then
+    VENV_DIR=$CHECKOUTS_DIR/$(basename $NEW_ENV)
+    echo "making project dir: $VENV_DIR"
+    mkdir -p $VENV_DIR
+fi
+
