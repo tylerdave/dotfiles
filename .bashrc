@@ -9,6 +9,8 @@ export GIT_PS1_SHOWCOLORHINTS=True
 #export PROMPT_COMMAND='__git_ps1 "[\u@\h:\w" "]\\\$ "'
 export PROMPT_DIRTRIM=3
 
+export NOSE_REDNOSE=1
+
 export CHECKOUTS_DIR=$HOME/checkouts
 export PROJECT_HOME=$CHECKOUTS_DIR
 export PYTHONDONTWRITEBYTECODE=1
@@ -31,7 +33,7 @@ alias ll='ls -al --color=auto'
 # print a nice timestamp
 alias ts='date +"%Y-%m-%d-%H:%M:%S"'
 
-alias cleanpyc='find . -name "*.pyc" -delete'
+alias cleanpyc='find . -name "*.pyc" -delete && find . -type d -name "__pycache__" -exec rmdir "{}" \;'
 
 # Bash functions
 # adds a timestamp
@@ -112,6 +114,13 @@ link_auth_sock(){
         echo "linking: $OLD_SSH_AUTH_SOCK -> $SSH_AUTH_SOCK"
     fi
 }
+
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
 
 link_auth_sock
 

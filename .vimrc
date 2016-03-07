@@ -61,7 +61,6 @@ if v:version >= 702
     "Bundle 'Valloric/YouCompleteMe'
 "   Plugin 'ervandew/supertab'
    Plugin 'kevinw/pyflakes-vim'
-
     " Snippets:
 "    Plugin 'msanders/snipmate.vim'
 
@@ -87,6 +86,9 @@ if v:version >= 702
     Plugin 'godlygeek/tabular'
     Plugin 'plasticboy/vim-markdown'
     let g:vim_markdown_folding_disabled=1
+
+    " Auto paste mode:
+    Plugin 'ConradIrwin/vim-bracketed-paste'
 
     call vundle#end()
     filetype plugin indent on
