@@ -90,6 +90,8 @@ if v:version >= 702
     " Auto paste mode:
     Plugin 'ConradIrwin/vim-bracketed-paste'
 
+    Plugin 'IN3D/vim-raml'
+
     call vundle#end()
     filetype plugin indent on
 
