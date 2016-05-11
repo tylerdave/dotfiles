@@ -77,6 +77,7 @@ if v:version >= 702
 
     " Airline:
     Plugin 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
     let g:airline_powerline_fonts = 1
     let g:airline_theme = 'powerlineish'
     " Powerline:
@@ -87,6 +88,12 @@ if v:version >= 702
     Plugin 'godlygeek/tabular'
     Plugin 'plasticboy/vim-markdown'
     let g:vim_markdown_folding_disabled=1
+
+    " TOML:
+    Plugin 'cespare/vim-toml'
+   
+    " Go:
+    Plugin 'fatih/vim-go'
 
     call vundle#end()
     filetype plugin indent on
