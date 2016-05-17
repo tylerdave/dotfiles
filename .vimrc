@@ -111,7 +111,8 @@ if v:version >= 702
     endtry
 
     set list
-    set listchars=trail:·,extends:→,precedes:←,nbsp:⇥,tab:↹↹
+    set listchars=trail:·,extends:→,precedes:←,nbsp:⇥,tab:··
+    "↹↹
 
     au BufRead,BufNewFile *.raml set filetype=yaml
 
