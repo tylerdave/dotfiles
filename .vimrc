@@ -61,7 +61,6 @@ if v:version >= 702
     "Bundle 'Valloric/YouCompleteMe'
 "   Plugin 'ervandew/supertab'
    Plugin 'kevinw/pyflakes-vim'
-    Plugin 'ConradIrwin/vim-bracketed-paste'
     " Snippets:
 "    Plugin 'msanders/snipmate.vim'
 
@@ -97,6 +96,12 @@ if v:version >= 702
 
     " Rust:
     Plugin 'rust-lang/rust.vim'
+
+    " Auto paste mode:
+    Plugin 'ConradIrwin/vim-bracketed-paste'
+
+    " Raml:
+    Plugin 'IN3D/vim-raml'
 
     call vundle#end()
     filetype plugin indent on

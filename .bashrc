@@ -11,6 +11,7 @@ export PROMPT_DIRTRIM=3
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export NOSE_REDNOSE=1
 
 export CHECKOUTS_DIR=$HOME/checkouts
 export PROJECT_HOME=$CHECKOUTS_DIR
