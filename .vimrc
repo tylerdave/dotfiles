@@ -95,6 +95,9 @@ if v:version >= 702
     " Go:
     Plugin 'fatih/vim-go'
 
+    " Rust:
+    Plugin 'rust-lang/rust.vim'
+
     call vundle#end()
     filetype plugin indent on
 
