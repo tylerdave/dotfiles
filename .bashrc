@@ -81,6 +81,7 @@ PATH_DIRS="
 $HOME/.local/bin
 $HOME/.ghar/bin
 $HOME/node_modules/.bin
+$HOME/opt/bin
 "
 for DIR in $PATH_DIRS
 do
