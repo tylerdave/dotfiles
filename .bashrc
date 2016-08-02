@@ -9,6 +9,8 @@ export GIT_PS1_SHOWCOLORHINTS=True
 #export PROMPT_COMMAND='__git_ps1 "[\u@\h:\w" "]\\\$ "'
 export PROMPT_DIRTRIM=3
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export NOSE_REDNOSE=1
 
 export CHECKOUTS_DIR=$HOME/checkouts

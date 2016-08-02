@@ -76,6 +76,7 @@ if v:version >= 702
 
     " Airline:
     Plugin 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
     let g:airline_powerline_fonts = 1
     let g:airline_theme = 'powerlineish'
     " Powerline:
@@ -87,9 +88,19 @@ if v:version >= 702
     Plugin 'plasticboy/vim-markdown'
     let g:vim_markdown_folding_disabled=1
 
+    " TOML:
+    Plugin 'cespare/vim-toml'
+   
+    " Go:
+    Plugin 'fatih/vim-go'
+
+    " Rust:
+    Plugin 'rust-lang/rust.vim'
+
     " Auto paste mode:
     Plugin 'ConradIrwin/vim-bracketed-paste'
 
+    " Raml:
     Plugin 'IN3D/vim-raml'
 
     call vundle#end()
@@ -108,7 +119,8 @@ if v:version >= 702
     endtry
 
     set list
-    set listchars=trail:·,extends:→,precedes:←,nbsp:⇥,tab:↹↹
+    set listchars=trail:·,extends:→,precedes:←,nbsp:⇥,tab:··
+    "↹↹
 
     au BufRead,BufNewFile *.raml set filetype=yaml
 
