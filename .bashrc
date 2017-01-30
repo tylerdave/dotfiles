@@ -62,6 +62,7 @@ $HOME/.ghar/ghar-bash-completion.sh
 $HOME/.git-prompt.sh
 $HOME/.git-completion.bash
 $HOME/.django_bash_completion
+$HOME/.travis/travis.sh
 "
 for SOURCE_FILE in $SOURCE_FILES
 do
@@ -79,10 +80,11 @@ fi
 
 # Append $PATH
 PATH_DIRS="
-/usr/local/heroku/bin
 $HOME/.local/bin
 $HOME/.ghar/bin
+$HOME/opt
 $HOME/node_modules/.bin
+/usr/local/heroku/bin
 "
 for DIR in $PATH_DIRS
 do
