@@ -60,7 +60,7 @@ if v:version >= 702
     Plugin 'nvie/vim-flake8'
     "Bundle 'Valloric/YouCompleteMe'
 "   Plugin 'ervandew/supertab'
-   Plugin 'kevinw/pyflakes-vim'
+"   Plugin 'kevinw/pyflakes-vim'
     " Snippets:
 "    Plugin 'msanders/snipmate.vim'
 
@@ -502,4 +502,4 @@ endfunction
 
 highlight OverLength ctermbg=8 ctermfg=1
 match OverLength /\%80v.\+/
-highlight pyflakes ctermbg=1 ctermfg=0
+"highlight pyflakes ctermbg=1 ctermfg=0
