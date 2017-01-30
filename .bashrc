@@ -82,7 +82,7 @@ fi
 PATH_DIRS="
 $HOME/.local/bin
 $HOME/.ghar/bin
-$HOME/opt
+$HOME/opt/bin
 $HOME/node_modules/.bin
 /usr/local/heroku/bin
 "

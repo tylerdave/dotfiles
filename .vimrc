@@ -52,7 +52,7 @@ if v:version >= 702
     map <C-n> :NERDTreeToggle<CR>
     Plugin 'scrooloose/syntastic'
     Plugin 'scrooloose/nerdcommenter'
-"    Plugin 'kien/ctrlp.vim'
+    Plugin 'kien/ctrlp.vim'
     Plugin 'tpope/vim-fugitive'
 "    Bundle 'klen/python-mode'
     Plugin 'davidhalter/jedi-vim'
@@ -102,6 +102,9 @@ if v:version >= 702
 
     " Raml:
     Plugin 'IN3D/vim-raml'
+
+    " Ferret search:
+    Plugin 'wincent/ferret'
 
     call vundle#end()
     filetype plugin indent on
