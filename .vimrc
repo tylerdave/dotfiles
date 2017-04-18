@@ -72,7 +72,7 @@ if v:version >= 702
     Plugin 'sjl/gundo.vim'
 
     " Tests:
-    Plugin 'reinh/vim-makegreen'
+"    Plugin 'reinh/vim-makegreen'
 
     " Airline:
     Plugin 'bling/vim-airline'
