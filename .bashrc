@@ -36,6 +36,7 @@ alias ll='ls -al --color=auto'
 alias ts='date +"%Y-%m-%d-%H:%M:%S"'
 
 alias cleanpyc='find . -name "*.pyc" -delete && find . -type d -name "__pycache__" -exec rmdir "{}" \;'
+alias ducks='du -cks * | sort -rn | head'
 
 # Bash functions
 # adds a timestamp
