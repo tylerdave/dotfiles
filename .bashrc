@@ -124,7 +124,16 @@ if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+   POWERLINE_FILES="
+/usr/share/powerline/bash/powerline.sh
+/usr/share/powerline/bindings/bash/powerline.sh
+"
+  for SOURCE_FILE in $POWERLINE_FILES
+  do
+    if [ -f $SOURCE_FILE ]; then
+        . $SOURCE_FILE
+    fi
+  done
 fi
 
 link_auth_sock
