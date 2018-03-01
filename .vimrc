@@ -139,7 +139,8 @@ if v:version >= 702
     "↹↹
 
     au BufRead,BufNewFile *.raml set filetype=yaml
-
+    set cursorline
+    set cursorcolumn
 
 endif
 
