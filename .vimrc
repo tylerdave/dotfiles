@@ -72,7 +72,19 @@ if v:version >= 702
     Plugin 'sjl/gundo.vim'
 
     " Tests:
+    Plugin 'janko-m/vim-test'
+    let test#python#pytest#options = '--verbose'
+    " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+    nmap tn :TestNearest<CR>
+    nmap tt :TestNearest<CR>
+    nmap tf :TestFile<CR>
+    nmap ts :TestSuite<CR>
+    nmap tl :TestLast<CR>
+    nmap tv :TestVisit<CR>
+"    Plugin 'benmills/vimux'
+"    let test#strategy = "vimux"
 "    Plugin 'reinh/vim-makegreen'
+"    let test#strategy = "makegreen"
 
     " Airline:
     Plugin 'bling/vim-airline'
@@ -93,6 +105,7 @@ if v:version >= 702
    
     " Go:
     Plugin 'fatih/vim-go'
+    let g:go_version_warning = 0
 
     " Rust:
     Plugin 'rust-lang/rust.vim'
@@ -126,7 +139,8 @@ if v:version >= 702
     "↹↹
 
     au BufRead,BufNewFile *.raml set filetype=yaml
-
+    set cursorline
+    set cursorcolumn
 
 endif
 
