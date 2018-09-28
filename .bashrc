@@ -31,13 +31,15 @@ fi
 alias svnd='svn --diff-cmd diff -x "-y --suppress-common-lines" diff | less'
 alias grin='grin --force-color'
 alias less='less -R'
-alias ll='ls -al --color=auto'
+alias ll='ls -al'  # --color=auto'
 # print a nice timestamp
 alias ts='date +"%Y-%m-%d-%H:%M:%S"'
 
 alias cleanpyc='find . -name "*.pyc" -delete && find . -type d -name "__pycache__" -exec rmdir "{}" \;'
 alias ducks='du -cks * | sort -rn | head'
 alias curltime='curl -w "@$HOME/.curl-format.txt" -o /dev/null -s'
+alias timestamp='date -u +"%Y-%m-%dT%H:%M:%SZ"'
+
 # Bash functions
 # adds a timestamp
 addts() {
@@ -53,6 +55,14 @@ repeat(){
     done
 }
 
+k-redeploy() {
+  kubectl patch deployment $1 -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"deploy-datetime\":\"`timestamp`\"}}}}}"
+}
+
+k() {
+  kubectl config current-context
+}
+
 
 # Source additional settings files
 SOURCE_FILES="
@@ -64,6 +74,7 @@ $HOME/.git-prompt.sh
 $HOME/.git-completion.bash
 $HOME/.django_bash_completion
 $HOME/.travis/travis.sh
+#$HOME/.iterm2_shell_integration.bash
 "
 for SOURCE_FILE in $SOURCE_FILES
 do
@@ -127,6 +138,7 @@ if which powerline-daemon &> /dev/null ; then
    POWERLINE_FILES="
 /usr/share/powerline/bash/powerline.sh
 /usr/share/powerline/bindings/bash/powerline.sh
+/usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 "
   for SOURCE_FILE in $POWERLINE_FILES
   do
@@ -143,3 +155,6 @@ reauth() {
     echo "found: $SSH_AUTH_SOCK"
     link_auth_sock
 }
+
+# added by pipsi (https://github.com/mitsuhiko/pipsi)
+export PATH="/Users/dave.forgac/.local/bin:$PATH"
