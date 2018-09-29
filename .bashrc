@@ -7,7 +7,7 @@ export GIT_PS1_SHOWSTASHSTATE=True
 export GIT_PS1_SHOWCOLORHINTS=True
 
 #export PROMPT_COMMAND='__git_ps1 "[\u@\h:\w" "]\\\$ "'
-export PROMPT_DIRTRIM=3
+export PROMPT_DIRTRIM=2
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
@@ -39,6 +39,7 @@ alias cleanpyc='find . -name "*.pyc" -delete && find . -type d -name "__pycache_
 alias ducks='du -cks * | sort -rn | head'
 alias curltime='curl -w "@$HOME/.curl-format.txt" -o /dev/null -s'
 alias timestamp='date -u +"%Y-%m-%dT%H:%M:%SZ"'
+
 
 # Bash functions
 # adds a timestamp
@@ -135,7 +136,8 @@ if which powerline-daemon &> /dev/null ; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
-   POWERLINE_FILES="
+  POWERLINE_BASH_WIDTH=40
+  POWERLINE_FILES="
 /usr/share/powerline/bash/powerline.sh
 /usr/share/powerline/bindings/bash/powerline.sh
 /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
@@ -146,6 +148,7 @@ if which powerline-daemon &> /dev/null ; then
         . $SOURCE_FILE
     fi
   done
+  . /usr/share/powerline/bash/powerline.sh
 fi
 
 link_auth_sock
