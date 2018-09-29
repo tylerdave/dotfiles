@@ -18,3 +18,5 @@ safecrlf = true
 ui = true
 [push]
 	default = simple
+[pull]
+	rebase = true
