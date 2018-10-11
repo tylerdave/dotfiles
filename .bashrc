@@ -148,7 +148,6 @@ if which powerline-daemon &> /dev/null ; then
         . $SOURCE_FILE
     fi
   done
-  . /usr/share/powerline/bash/powerline.sh
 fi
 
 link_auth_sock
