@@ -41,6 +41,19 @@ alias curltime='curl -w "@$HOME/.curl-format.txt" -o /dev/null -s'
 alias timestamp='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 
 
+gitls() {
+    git ls-files | while read -r line;
+    do
+        st=$(git status -s "$line");
+        if [ -n "$st" ]; then
+            echo "$st";
+        else
+            echo "   $line";
+        fi;
+    done
+}
+
+
 # Bash functions
 # adds a timestamp
 addts() {
@@ -60,8 +73,22 @@ k-redeploy() {
   kubectl patch deployment $1 -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"deploy-datetime\":\"`timestamp`\"}}}}}"
 }
 
+k-ds-redeploy() {
+  kubectl patch ds $1 -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"deploy-datetime\":\"`timestamp`\"}}}}}"
+}
+
 k() {
   kubectl config current-context
+}
+
+kustinit() {
+  touch kustomization.yaml
+  for f in *.yaml; do
+    if [ "$f" != "kustomization.yaml" ]
+    then
+        kustomize edit add resource "$f"
+    fi
+  done
 }
 
 
@@ -158,5 +185,17 @@ reauth() {
     link_auth_sock
 }
 
+# Mac stuff
+if [[ -r "$(brew --prefix)/opt/mcfly/mcfly.bash" ]]; then
+  source "$(brew --prefix)/opt/mcfly/mcfly.bash"
+fi
+
 # added by pipsi (https://github.com/mitsuhiko/pipsi)
 export PATH="/Users/dave.forgac/.local/bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
